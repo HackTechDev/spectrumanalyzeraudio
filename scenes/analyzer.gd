@@ -19,6 +19,7 @@ func _ready():
 	min_values.fill(0.0)
 	max_values.resize(VU_COUNT)
 	max_values.fill(0.0)
+	get_tree().get_root().set_transparent_background(true)
 	
 func _process(_delta):
 	var prev_hz = 0
