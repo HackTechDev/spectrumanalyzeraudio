@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsidf3y5w7io8"]
+
+[ext_resource type="Script" path="res://scenes/analyzer.gd" id="1_oy56p"]
+[ext_resource type="Shader" path="res://shaders/analyzer.gdshader" id="2_s751t"]
+[ext_resource type="AudioStream" uid="uid://bia0tmwuxii55" path="res://music/04 - Unknown Artist - Track 4.ogg" id="3_1mte4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kycig"]
+shader = ExtResource("2_s751t")
+shader_parameter/freq_data = null
+
+[node name="Analyzer" type="Node2D"]
+script = ExtResource("1_oy56p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_kycig")
+offset_right = 600.0
+offset_bottom = 400.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1mte4")
+autoplay = true
